@@ -61,6 +61,15 @@ S15: CS2114 ECE252 CPSC270 CSCI204 CS3114 RecurTutor CSCI115 uwosh-pl uwosh-tayl
 Tutorial: min
 	python $(CONFIG_SCRIPT) config/Tutorial.json
 
+cisc187: min
+	python $(CONFIG_SCRIPT) config/CISC-187.json
+
+slides: min
+	python $(CONFIG_SCRIPT) --slides config/CISC-187.json
+
+localhost: min
+	python $(CONFIG_SCRIPT) config/localhost.json
+
 TDDD86_2014: min
 	python $(CONFIG_SCRIPT) config/TDDD86_2014.json
 
@@ -120,7 +129,7 @@ CS3114PM: min
 	python $(CONFIG_SCRIPT) config/CS3114PM.json
 
 CS3114notes: min
-	python $(CONFIG_SCRIPT) s config/CS3114notes.json
+	python $(CONFIG_SCRIPT) -s config/CS3114notes.json
 
 COP3530: min
 	python $(CONFIG_SCRIPT) config/COP3530.json
@@ -143,39 +152,6 @@ IS: min
 NP: min
 	python $(CONFIG_SCRIPT) config/NP.json
 
-test: min
-	python $(CONFIG_SCRIPT) config/test.json
-
-testX: min
-	python $(CONFIG_SCRIPT) config/testX.json
-
-testcmap: min
-	python $(CONFIG_SCRIPT) config/testcmap.json
-
-testanal: min
-	python $(CONFIG_SCRIPT) config/testanal.json	
-
-testfi: min
-	python $(CONFIG_SCRIPT) config/testfi.json
-
-testpt: min
-	python $(CONFIG_SCRIPT) config/testpt.json
-
-testsv: min
-	python $(CONFIG_SCRIPT) config/testsv.json
-
-testcpp: min
-	python $(CONFIG_SCRIPT) config/testcpp.json
-
-uwosh: min
-	python $(CONFIG_SCRIPT) config/uwosh.json
-
-uwosh-taylor: min
-	python $(CONFIG_SCRIPT) config/uwosh-taylor.json
-
-uwosh-pl: min
-	python $(CONFIG_SCRIPT) config/uwosh-pl.json
-
 List: min
 	python $(CONFIG_SCRIPT) s config/List.json
 
@@ -188,10 +164,7 @@ Everything: min
 invalid: min
 	python $(CONFIG_SCRIPT) config/invalid.json
 
-slides: min
-	python $(CONFIG_SCRIPT) -s config/slides.json
-
-allBooks: CS208 CS2114 CS2401 CS3114 CS3530 OpenDSA Everything testcmap
+allBooks: CS208 CS2114 CS2401 CS3114 CS3530 OpenDSA Everything 
 
 nomin:
 	@cp JSAV/build/JSAV.js JSAV/build/JSAV-min.js

@@ -8,10 +8,9 @@
    :prerequisites:
    :topic: OpenDSA
 
-How to Use this System
-======================
+How to use this book
+====================
 
-**Welcome to OpenDSA!**
 OpenDSA is an open source project whose goal is to provide online
 course materials for a wide range of Data Structures and Algorithms
 courses.
@@ -26,7 +25,9 @@ exercises.
 The goal of the exercisees is to let you know if you really understand
 what you have been reading.
 
-**Supported browsers:** We support any reasonably recent version of
+Supported browsers
+------------------
+We support any reasonably recent version of
 Chrome, Firefox, or Safari.
 There is a pretty good chance that OpenDSA will work on your tablet or
 smartphone as well.
@@ -35,7 +36,8 @@ Internet Explorer, though it usually works there as well.
 At this time we have no plans to take any special effort to support
 the non-standard requirements imposed by Internet Explorer.
 
-**Registration and Accounts:**
+Registration and Accounts
+-------------------------
 This is an open source project, and in keeping with the spirit of our
 commitment to  openness, our materials are not hidden behind a login
 wall.
@@ -72,7 +74,8 @@ You should not really need to logout unless you want another person to
 be able to use the same computer to also access the OpenDSA materials
 under another account.
 
-**Overview of major elements:**
+Overview of major elements
+--------------------------
 An OpenDSA module contains a number of interactive components
 intended to help you learn the material, in addition to regular text
 and graphics.
@@ -85,7 +88,8 @@ there are "proficiency exercises" where you show the steps
 taken by an algorithm, there are sets of questions, there are
 calculators, and there are other types of interactive exercises.
 
-**Getting credit:**
+Getting credit
+--------------
 You can get "completion" for doing the various activities.
 When any of the following activities are completed, the interface
 should give you some type of feedback such as showing a green
@@ -103,7 +107,8 @@ Depending on how your book is configured, completing an activity might
 or might not give credit points, as shown in the "student view"
 screen.
 
-**Seeing your credit and seeing your current score:**
+Seeing your credit and seeing your current score
+------------------------------------------------
 Usually an exercise or slideshow will give you visual confirmation
 when you have completed it.
 If you complete all exercises and slideshows for a module, the title
@@ -130,7 +135,8 @@ assignments.
 You change the view by checking or unchecking the "toggle view" box
 near the top of the gradebook page.
 
-**Slideshows:**
+Slideshows
+----------
 Slideshows are controlled by the buttons at the top of the slideshow.
 "<" and ">" buttons will back up or advance by one slide, while "<<"
 and ">>" will take you to the beginning or end of the slideshow.
@@ -140,7 +146,8 @@ A green checkmark should show up on the right when you complete it.
 Depending on your your book instance is configured, completing a
 slideshow might give you points or it might not.
 
-**Algorithm Visualizations:**
+Algorithm Visualizations
+------------------------
 Slideshows demonstrate a part of an algorithm on a fixed input.
 The Algorithm Visualizations let you run the whole algorithm,
 typically on input that you can choose.
@@ -155,7 +162,8 @@ visualization.
 Many visualizations have a "Help" button to give detailed information
 about that particular visualization.
 
-**Question Sets:**
+Question Sets
+-------------
 Most modules finish with a collection of multiple
 choice, True/False, or type-a-number questions.
 To get credit for a question set, you will have to
@@ -186,14 +194,17 @@ If you take a hint, you will not get credit for that question toward
 completing the exercise.
 However, you will not lose a point on that question, either.
 
-**Interactive Questions:** Some of the question are interactive, in
+Interactive Questions
+---------------------
+Some of the question are interactive, in
 that that you will click on an array or other visual element to answer
 the question.
 They work the same way as the multiple choice questions,
 in that there is a required number that you must get right to complete
 the exercise successfully.
 
-**Proficiency Exercises:**
+Proficiency Exercises
+---------------------
 Proficiency exercises are graded on a point system.
 Each (logical) step that you do correctly in the proficiency exercise
 gives you a point.
@@ -208,7 +219,9 @@ steps.
 Once you get completion credit for a proficiency exercise, the
 "hide/show" button above the exercise will turn green.
 
-**Settings Button:** The visualizations, slideshows, and proficiency
+Settings Button 
+---------------
+The visualizations, slideshows, and proficiency
 exercises usually have a button in the upper right corner with a
 gear icon on it.
 That will let you change some of the default settings,
@@ -216,7 +229,9 @@ such as the animation speed (usually used for things like the swap
 steps in the sorting algorithm visualizations), or whether the arrays
 show values or height bars.
 
-**Enlarging Equations:** Math is rendered using the MathJAX library,
+Enlarging Equations
+-------------------
+Math is rendered using the MathJAX library,
 which gives you a lot of options on how you can see things.
 Most importantly, if you right click on any math equation, you will
 get a context menu that includes "Math Settings".
@@ -224,4 +239,8 @@ This in turn has a sub-menu named "Zoom Trigger".
 With that, you can set zoom to "hover" or "click".
 From then on, hovering or clicking on any equation will make it
 larger.
-This can really help with reading some of the equations.
+
+For more information, click on the "MathJax Help" option form the context menu.
+
+
+

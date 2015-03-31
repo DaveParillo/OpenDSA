@@ -12,6 +12,15 @@
 Bibliography
 ============
 
+.. [Bacon1620] Francis Bacon,
+   *Novum Organum*,
+   Google eBook, Clarendon Press, 1878.
+
+.. [Booch91] Grady Booch,
+   *Object-Oriented Design With Applications*, 
+   Benjamin/Cummings, Menlo Park, California, 1991.
+
+
 .. [GalilItaliano91] Zvi Galil and Giuseppe F. Italiano,
    "Data Structures and Algorithms for Disjoint Set Union Problems",
    *Computing Surveys 23*, 3(September 1991), 319-344.

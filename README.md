@@ -63,9 +63,6 @@ we have created.
 Exercises: Our Khan Academy Infrastructure-based exercises. Subdirectories
 divide the content by topic.
 
-**Frontend: Experimental interface for allowing instructor selection of modules.
-Currently not in use, will be replaced at some point.
-
 JSAV: The JavaScript Algorithm Visualization library (JSAV). This is a submodule
 for the OpenDSA repository, linked to: https://github.com/vkaravir/JSAV. Thus,
 when you check out OpenDSA, you must get the JSAV submodule by either running
@@ -82,9 +79,6 @@ Makefile: Primarily for source file validation and to generate some of the
 
 MIT-license.txt: The license file. OpenDSA is distributed under an MIT open
 source license.
-
-**Modules: Tutorial source from an obsolete system for generating content. Will
-be removed.
 
 ODSAkhan-exercises: Our somewhat modified version of the khan-exercises
 distribution (the original is also available at GitHub). Note that you can view
@@ -110,9 +104,6 @@ SourceCode: The sourcecode for code snippets contained in the tutorials.
 Ultimately, we hope to support code snippets in Processing (a Java dialect),
 Python, and JavaScript. In this way, instructors would be able to generate
 versions of tutorials that support any or all of these three languages.
-
-**Storyboard: Materials related to "storyboarding" designs for tutorials. This
-concept never gained much traction, and this might be removed at some point.
 
 WebServer: A command for invoking a simple python-based web server that will
 enable you to run the Khan Academy exercises if your machine is not running a

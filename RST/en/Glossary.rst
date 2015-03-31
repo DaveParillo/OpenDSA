@@ -647,6 +647,12 @@ Glossary
       The number of comparisons required is often used as a
       :term:`measure of cost` for sorting and searching algorithms.
 
+   compile-time polymorphism
+      A form of :term:`polymorphism` known as Overloading.
+      Overloaded methods have the same names, but different signatures
+      as a method available elsewhere in the class.
+      Compare to :term:`run-time polymorphism`.
+
    complete binary tree
       A binary tree where the nodes are filled in row by row, with the
       bottom row filled in left to right.
@@ -683,6 +689,12 @@ Glossary
       "traversal" behavior.
       This might in turn require invoking the traversal method of
       other objects (in this case, the children of the root).
+
+   composition
+      Relationships between classes based on usage rather than 
+      :term:`inheritance <inherit>`, i.e. a **HAS-A** relationship.
+      For example, some code in class 'A' has a reference to some
+      other class 'B'.
 
    composite type
       A type whose :term:`members <member>` have subparts.
@@ -854,7 +866,7 @@ Glossary
       in-memory form.
 
    design pattern
-      An a bstractions for describing the design of programs |---|
+      An abstraction for describing the design of programs |---| 
       that is, the interactions of objects and classes.
       Experienced software designers learn and reuse patterns
       for combining software components, and design patterns allow
@@ -2555,6 +2567,13 @@ Glossary
       If either or both of the children does not exist, then a null
       pointer is stored.
 
+   polymorphism
+      An :term:`object-oriented programming <object-oriented programming paradigm>`
+      term meaning *one name, many forms*.
+      It describes the ability of software to change its behavior
+      dynamically.  Two basic forms exist:
+      :term:`run-time polymorphism` and :term:`compile-time polymorphism`.
+
    poset
       Another name for a :term:`partially ordered set`.
 
@@ -2979,6 +2998,13 @@ Glossary
       :term:`runtime stack`, the :term:`free store`, and the
       :term:`garbage collector <garbage collection>`,
       and it conducts the execution of the program.
+
+   run-time polymorphism
+      A form of :term:`polymorphism` known as Overriding.
+      Overridden methods are those which implement a new method
+      with the same signature as a method inherited from its
+      base class.
+      Compare to :term:`compile-time polymorphism`.
 
    runtime stack
       The place where an :term:`activation record` is stored when a

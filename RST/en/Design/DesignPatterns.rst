@@ -1,3 +1,4 @@
+
 .. This file is part of the OpenDSA eTextbook project. See
 .. http://algoviz.org/OpenDSA for more details.
 .. Copyright (c) 2012-2013 by the OpenDSA Project Contributors, and
@@ -5,7 +6,7 @@
 
 .. avmetadata::
    :author: Cliff Shaffer
-   :requires: ADT
+   :requires: ADT; OO Intro
    :satisfies: design patterns
    :topic: Design Patterns
 
@@ -237,3 +238,6 @@ The visitor design pattern is focused on encapsulating an activity that
 will be performed on all members of a collection so that completely
 different activities can be substituted within a generic method that
 accesses all of the collection members.
+
+
+
