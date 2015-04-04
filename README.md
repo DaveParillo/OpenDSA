@@ -1,7 +1,14 @@
 # OpenDSA (Development Channel)
 
-This is the development repository for the OpenDSA project. Note that the stable
-release version is maintained at:
+This is a fork of the OpenDSA development channel.
+It includes material that might be more appropriate in a second semester computer science
+class that includes some elementary data structures and algorithms, as well as
+an introdcution to basic object orientation and the software development process.
+Topics probably best left out of the main OpenDSA project.
+
+If you are looking for the development repository for the OpenDSA project, go to 
+https://github.com/OpenDSA/OpenDSA.
+The stable release of OpenDSA is maintained at:
 https://github.com/cashaffer/OpenDSA-stable.
 
 The goal of the OpenDSA project is to create open-source courseware for use in
@@ -10,15 +17,6 @@ content with algorithm visualizations and interactive, automatically assessed
 exercises.
 
 ## Setup
-
-To check out a read-only copy of this repository:
-
-    git clone git://github.com/OpenDSA/OpenDSA.git OpenDSA
-
-To check out a read-write copy of this repository (requires permission to commit
-to the repo):
-
-    git clone https://YOURGITHUBID@github.com/OpenDSA/OpenDSA.git OpenDSA
 
 Once you have cloned this repository, you will need to initialize and update the
 submodules and compile some of the libraries. Do the following:
@@ -80,6 +78,10 @@ Makefile: Primarily for source file validation and to generate some of the
 MIT-license.txt: The license file. OpenDSA is distributed under an MIT open
 source license.
 
+Portions of this fork incorporates material from http://openhttp://opendatastructures.org/
+which is an excellent resource, but distributed under a Creative Commons Share-Alike license,
+there fore this fork does have slightly more restrictive licensing than the original OpenDSA.
+
 ODSAkhan-exercises: Our somewhat modified version of the khan-exercises
 distribution (the original is also available at GitHub). Note that you can view
 and run the exercises with just this distribution, however, the files must be
@@ -108,3 +110,5 @@ versions of tutorials that support any or all of these three languages.
 WebServer: A command for invoking a simple python-based web server that will
 enable you to run the Khan Academy exercises if your machine is not running a
 true web server. You only need to have python installed for this to work.
+
+
