@@ -60,8 +60,7 @@ function evalExp(exp,envir) {
 			       SLang.env.update(SLang.env.getCloEnv(f),
 						SLang.env.getCloParams(f),args));
 	    }
-	}
-	else {
+	} else {
 	    throw f + " is not a closure and thus cannot be applied.";
 	}
     } else if (SLang.absyn.isPrimAppExp(exp)) {
@@ -79,6 +78,38 @@ function myEval(p) {
 	window.alert( "The input is not a program.");
     }
 }
+/*
+function expToString(exp) {
+    return "<omitted>";
+}
+function valueToString(value) {
+
+function envToString(e) {
+    function aux(e) {
+	if (SLang.env.isEmptyEnv(e)) {
+	    return "EmptyEnv";
+	} else {
+	    var result = "|| " + aux(SLang.env.getEnvEnv(e));
+            var bindings = SLang.env.getEnvBindings(e);
+	    for(var i=0; i<bindings.length; i++) {
+		result = bindings[i][0] + " = " +valueToString(bindings[i][1]) + " " + result;
+	    }
+	    return result;
+	}
+    }
+
+    return "{ " + aux(e) + " }";
+}
+
+    if (SLang.env.isNum(value)) {
+	return SLang.env.getNumValue(value)+"";
+    }
+    else if (SLang.env.isClo(value)) {
+	return "Closure( params=" + SLang.env.getCloParams(value) + " , body="+ 
+	expToString(SLang.env.getCloBody(value)) + " , env=" + envToString(SLang.env.getCloEnv(value)) +" )";
+    }
+}
+*/
 function interpret(source) {
     var output='';
 

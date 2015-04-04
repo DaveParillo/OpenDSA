@@ -45,16 +45,19 @@ function evalExp(exp,envir) {
     if (SLang.absyn.isIntExp(exp)) {
 	return SLang.env.createNum(SLang.absyn.getIntExpValue(exp));
     } else if (SLang.absyn.isRealExp(exp)) {
-	return SLang.env.createNum(SLang.absyn.getRealExpValue(exp));
+	return SLang.env.createRealNum(SLang.absyn.getRealExpValue(exp));
     } else if (SLang.absyn.isGt1Exp(exp)) {
 	var gt1 = function (reals) {
             if (reals.length === 0) {
 		throw new Error( "gt1: wrong argument list" );
-	    } else  if (SLang.absyn.getRealExpValue(reals[0]) > 1.0) {
-		return reals[0];
-	    } else  {
-		reals.shift();
-		return gt1(reals);
+	    } else {
+		var firstValue = SLang.env.getRealNumValue(evalExp(reals[0]));
+		if (firstValue > 1.0) {
+		    return SLang.env.createRealNum(firstValue);
+		} else  {
+		    reals.shift();
+		    return gt1(reals);
+		}
 	    }
 	};
 	return gt1( SLang.absyn.getGt1ExpList(exp) );
@@ -69,9 +72,16 @@ function evalExp(exp,envir) {
 	var f = evalExp(SLang.absyn.getAppExpFn(exp),envir);
 	var args = SLang.absyn.getAppExpArgs(exp).map( function(arg) { return evalExp(arg,envir); } );
 	if (SLang.env.isClo(f)) {
-	    return evalExp(SLang.env.getCloBody(f),SLang.env.update(SLang.env.getCloEnv(f),SLang.env.getCloParams(f),args));
-	}
-	else {
+	    if (SLang.env.getCloParams(f).length !== args.length) {		
+		throw new Error("Runtime error: wrong number of arguments in " +
+                        "a function call (" + SLang.env.getCloParams(f).length +
+			" expected but " + args.length + " given)");
+	    } else {
+		return evalExp(SLang.env.getCloBody(f),
+			       SLang.env.update(SLang.env.getCloEnv(f),
+						SLang.env.getCloParams(f),args));
+	    }
+	} else {
 	    throw f + " is not a closure and thus cannot be applied.";
 	}
     } else if (SLang.absyn.isPrimAppExp(exp)) {

@@ -1,4 +1,4 @@
-/* global SLang : true */
+/* global SLang : true, console  */
 
 (function () {
 
@@ -6,14 +6,6 @@
 
     window.SLang = {};
     window.SLang.grammarWindow = null;
-
-
-    function go(n) {
-	document.getElementById('interpreterinput').value=SLang.samples[n][0]; 
-	document.getElementById('interpreteroutput').value=
-	    SLang.interpret(document.getElementById('interpreterinput').value);
-    }
-
 
     function openGrammarWindow() {
 	if (SLang.grammarWindow === null || SLang.grammarWindow.closed) {
@@ -36,6 +28,12 @@
 	}
     }
 
+  function go(n) {
+  document.getElementById('interpreterinput').value=SLang.samples[n][1]; 
+  document.getElementById('interpreteroutput').value=
+	    SLang.interpret(document.getElementById('interpreterinput').value);
+    }
+
 
     function runTestSuite() {
 	var testOutput, testExpected;
@@ -46,8 +44,8 @@
 	console.log("            Running test suite");
 	console.log("==============================================");
 	for(var i=1; i<=n; i++) {
-	    testOutput = SLang.interpret(samples[i][0]);
-	    testExpected = samples[i][1];
+	    testOutput = SLang.interpret(samples[i][1]);
+	    testExpected = samples[i][2];
 	    if (testOutput === testExpected) {
 		count++;
 	    } else {
@@ -58,9 +56,9 @@
 	    }
         }
 	if (count === n) {
-	    console.log("Passed all " + n  + " tests.")
+	    console.log("Passed all " + n  + " tests.");
 	} else {
-	    console.log("Failed " + (n-count) + " test(s).")
+	    console.log("Failed " + (n-count) + " test(s).");
 	}
     }
 
@@ -68,5 +66,4 @@
     SLang.openGrammarWindow = openGrammarWindow;
     SLang.toggleTestPrograms = toggleTestPrograms;
     SLang.runTestSuite = runTestSuite;
-
 }());

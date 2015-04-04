@@ -9,21 +9,19 @@ LETTER		      [a-zA-Z]
 %%
 
 \s+                                   { /* skip whitespace */ }
-"lambda"        		      { return 'FN'; }
+"fn"				      { return 'FN'; }
 "("                   		      { return 'LPAREN'; }
 ")"                   		      { return 'RPAREN'; }
-"["                   		      { return 'LBRACKET'; }
-"]"                   		      { return 'RBRACKET'; }
 "+"                   		      { return 'PLUS'; }
 "*"                   		      { return 'TIMES'; }
 "add1"                                { return 'ADD1'; }
-"subtract"                            { return 'SUB'; }
-"from"                                { return 'FROM'; }
-"gt1"                                 { return 'GT1'; }
+"let"                                 { return 'LET'; }
+"in"                                  { return 'IN'; }
+"end"                                 { return 'END'; }
 ","                   		      { return 'COMMA'; }
-"."                   		      { return 'THATRETURNS'; }
+"=>"                   		      { return 'THATRETURNS'; }
+"="                                   { return 'EQ'; }
 <<EOF>>               		      { return 'EOF'; }
-{DIGIT}+"."{DIGIT}+                   { return 'REAL'; }
 {LETTER}({LETTER}|{DIGIT}|_)*  	      { return 'VAR'; }
 {DIGIT}+                              { return 'INT'; }
 "."                                   { return 'DOT'; }
@@ -43,12 +41,10 @@ program
 exp
     : var_exp       { $$ = $1; }
     | intlit_exp    { $$ = $1; }
-    | reallit_exp   { $$ = $1; }
     | fn_exp        { $$ = $1; }
     | app_exp       { $$ = $1; }    
     | prim_app_exp  { $$ = $1; }
-    | sub_exp       { $$ = $1; }
-    | gt1_exp       { $$ = $1; }
+    | let_exp       { $$ = $1; }
     ;
 
 var_exp
@@ -59,21 +55,27 @@ intlit_exp
     : INT  { $$ = SLang.absyn.createIntExp( $1 ); }
     ;
 
-reallit_exp
-    : REAL { $$ = SLang.absyn.createRealExp( $1 ); }
-    ;
+let_exp
+    : LET bindings IN exp END
+           { var args = $2[1]; args.unshift( "args" );
+             var fnexp = SLang.absyn.createFnExp($2[0],$4);
+             $$ = SLang.absyn.createAppExp(fnexp,args);
+           }
+    ; 
 
-gt1_exp 
-    : GT1 LBRACKET args  RBRACKET { $$ = SLang.absyn.createGt1Exp( $3 ); }
-    ;             
-
-sub_exp : SUB exp FROM exp  
-           { $$ = SLang.absyn.createPrimAppExp("-",[$4,$2]); }}
+bindings
+    : VAR EQ exp              
+           { $$ = [ [ $1 ], [ $3 ] ]; }  
+    | VAR EQ exp bindings
+           { var vars = $4[0];  vars.unshift($1);
+             var vals = $4[1];  vals.unshift($3);
+	     $$ = [ vars, vals ];
+           }  
     ;
 
 fn_exp
-    : FN formals THATRETURNS exp
-           { $$ = SLang.absyn.createFnExp($2,$4); }
+    : FN LPAREN formals RPAREN THATRETURNS exp
+           { $$ = SLang.absyn.createFnExp($3,$6); }
     ;
 
 formals
