@@ -58,7 +58,9 @@ it had taken a group of scientists nearly seventy years to review and edit his w
 Today Gauss's name occurs in many places in mathematics and science:
 
 - The normal probability distribuiton as also called the Gaussian curve or distribution
-- Gauss's Laws for Gravity and 
+- Gauss's Laws for 
+  `Gravity <http://en.wikipedia.org/wiki/Gauss's_law_for_gravity>`_
+  and 
   `Electrostatics <http://hyperphysics.phy-astr.gsu.edu/hbase/electric/gaulaw.html>`_
 - The hypergeometric series, a.k.a the Gaussian series
 - Gaussian equations in spherical trigonometry
@@ -67,7 +69,7 @@ Today Gauss's name occurs in many places in mathematics and science:
 
 Gauss died in Göttingen, at the age of 78 on Februray 23, 1855.
 In Brunswick, there is a statue of him.
-It base is, appropriately, a 17 pointed star.
+Its base is, appropriately, a 17 pointed star.
 
 
 

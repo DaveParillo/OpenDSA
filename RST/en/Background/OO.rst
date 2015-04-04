@@ -149,7 +149,7 @@ Consider the following example:
 
 .. codeinclude:: Background/Inheritance
 
-when run, produces the following output:
+When run, produces the following output:
 
   'test1' does not equal 'test2'.
   'test1' is an Object.
@@ -183,7 +183,7 @@ Java InputStream's are used for reading data, one byte at a time, for example:
 
 Which creates a new FileInputStream instance. 
 FileInputStream is a subclass of InputStream so it is safe to assign an instance of 
-FileInputStream to an InputStream variable (the inputstream variable). 
+FileInputStream to an InputStream variable (the InputStream variable). 
 
 The *InputStream* class exposes common methods which all subclasses of *InputStream* inherit.
 
@@ -241,10 +241,111 @@ polymorphism in our code.
 Polymorphism
 ............
 
+:term:`Polymorphism` is often referred to as the third pillar 
+of object-oriented programming, after encapsulation and inheritance. 
+Polymorphism is a Greek word that means "many-shaped" and polymorphism itself comes in
+two distinct forms:
+
+- :term:`Compile-time polymorphism`
+
+  Base classes may define and implement abstract, or virtual methods, 
+  and derived classes can override them, which means they provide their own 
+  definition and implementation. 
+  At run-time, when client code calls the method, the type is resolved and invokes 
+  that override of the virtual method. 
+  Thus in your source code you can call a method on a base class, and cause a derived 
+  class's version of the method to be executed.
+
+- :term:`Run-time polymorphism`
+
+  At run time, objects of a derived class may be treated as objects of a base class 
+  in places such as method parameters and collections or arrays. 
+  When this occurs, the object's declared type is no longer identical to its 
+  run-time type.
+
+  Note that a derived class may be treated as any type in its inheritance hierarchy.
+
+Compile-time Polymorphism
++++++++++++++++++++++++++
+
+Consider our earlier discussion of the class *Object* when we discussed encapsulation.
+What is the result of the following code?
+
+.. codeinclude:: Background/Complex1
+
+.. line-block::
+   ``'a' and 'b' are not equal.``
+   ``'a' is Complex@325e9e34``
+   ``'b' is Complex@61e481c1``
+
+In this case, the two objects are not considered equal because they are not the same object.
+This is the default behavior for ``equals()``, and it is often sufficient.
+In cases where you need to determine whether two objects are *logically equivalent*,
+you override the ``equals()`` method.
+
+There are many classes where it would be irritating to have ``equals()`` evaluate to false:
+
+.. line-block::
+   Object a = new Integer(2);
+   Object b = new Integer(2);
+
+Recall that ``==`` always compares object references and in the above example, will identify
+the two Integer classes as different even though ``a.equals(b)`` evaluates to true.
+
+Similarly, the output of ``toString()`` displays the location of the object on the heap,
+which is not always the most intuitive string representation of your objects.
+
+Compare the previous example with the following.
+What output does this program produce?
+
+.. codeinclude:: Background/Complex2
+
+The class :term:`overrides <compile-time polymorphism>` the definitions of ``equals()`` and ``toString()`` 
+providing a more generally useful implementation than provided by the default
+implementation in the *Object* class.
+
+The output is:
+
+.. line-block::
+  ``'a' equals 'b'.``
+  ``'a' is (1.0 + 0.0i)``
+  ``'b' is (1.0 + 0.0i)``
+
+
+Run-time Polymorphism
++++++++++++++++++++++++++
 
 
 Abstraction
 ...........
+
+One of the key advantages of object oriented languages over :term:`procedural` languages is that
+objects act as proxies for the real-world |---| in other words, objects *model* the real world.
+In a procedural language, tasks are executed in functions or procedures and the
+data that the functions operate on is stored elsewhere. A better way to manage the complexity
+of large programs is to keep the data in a program and the operations allowed on that data
+in a cohesive logical unit.  
+A program describing a car might perform basic tasks: steer, speed up, slow down, but also
+needs to store information about the car: current speed, direction, cruise control setting, etc.
+
+If you wrote your car driving program in a procedural language, you would likely require 
+different functions to control each of the car behaviors.
+You might create functions for ``turnCarOn()``, ``turnCarOff()``, ``accelerate()``, ``steer()``,
+and others.  You would also need variables to store the current state of the car.
+Although it's perfectly valid to construct such a car in a procedural language, these
+functions and variables we have created only exist as a whole entity, a *car* in the mind of 
+the programmer who created it.  
+The idea that individual units within a program each have a specific role or responsibility
+is called :term"`cohesion` and is very difficult achieve in procedural programs.
+
+For very large programs, which might contain hundreds or even thousands of entities,
+lack of cohesion can introduce errors, make programs more difficult to understand and maintain,
+and complicate the development of very large programs.
+
+
+
+
+
 
 
 

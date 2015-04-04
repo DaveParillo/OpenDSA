@@ -591,6 +591,11 @@ Glossary
       :term:`internal fragmentation` since any space not actually
       used by the file in the last cluster is wasted.
 
+   cohesion
+      In :term:`object-oriented programming <object-oriented programming paradigm>`,
+      a term that refers to the degree to which a class has a single 
+      well-defined role or responsibility.
+
    collision
       In a :term:`hash system`, this refers to the case where two
       search :term:`keys <key>` are mapped by the
