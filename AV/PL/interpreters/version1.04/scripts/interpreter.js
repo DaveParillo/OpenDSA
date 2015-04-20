@@ -48,6 +48,7 @@ function evalExp(exp,envir) {
 	return SLang.env.createClo(SLang.absyn.getFnExpParams(exp),SLang.absyn.getFnExpBody(exp),envir);
     }
     else if (SLang.absyn.isAppExp(exp)) {
+        //console.log( JSON.stringify(envir) );
 	var f = evalExp(SLang.absyn.getAppExpFn(exp),envir);
 	var args = SLang.absyn.getAppExpArgs(exp).map( function(arg) { return evalExp(arg,envir); } );
 	if (SLang.env.isClo(f)) {
@@ -60,8 +61,7 @@ function evalExp(exp,envir) {
 			       SLang.env.update(SLang.env.getCloEnv(f),
 						SLang.env.getCloParams(f),args));
 	    }
-	}
-	else {
+	} else {
 	    throw f + " is not a closure and thus cannot be applied.";
 	}
     } else if (SLang.absyn.isPrimAppExp(exp)) {

@@ -4,8 +4,6 @@
 
 "use strict";
 
-
-
 var exports = {};
 
 // denoted values in the interpreted language SLang 1
@@ -23,6 +21,34 @@ function getNumValue(value) {
     } else {
 	throw new Error("Interpreter error: "  +
 			"The argument of getNumValue is not a Num value.");
+    }
+}
+function createBool(n) {
+    return ["Bool",n];
+}
+function isBool(value) {
+    return value[0] === "Bool";
+}
+function getBoolValue(value) {
+    if (isBool(value)) {
+	return value[1];
+    } else {
+	throw new Error("Interpreter error: "  +
+			"The argument of getBoolValue is not a Bool value.");
+    }
+}
+function createList(l) {
+    return ["List",l];
+}
+function isList(value) {
+    return value[0] === "List";
+}
+function getListValue(value) {
+    if (isList(value)) {
+	return value[1];
+    } else {
+	throw new Error("Interpreter error: "  +
+			"The argument of getListValue is not a List value.");
     }
 }
 function createClo(params,body,env) {
@@ -117,6 +143,9 @@ function initEnv() {
     return update(createEmptyEnv(), ["x","y"], [ createNum(5), createNum(6)]);
 }
 
+function toString(e) {
+    return JSON.stringify(e);
+}
 exports.createNum = createNum;
 exports.isNum = isNum;
 exports.getNumValue = getNumValue;
@@ -135,6 +164,14 @@ exports.getValue = getValue;
 exports.lookup = lookup;
 exports.update = update;
 exports.initEnv = initEnv;
+exports.toString = toString;
+exports.createBool = createBool;
+exports.isBool = isBool;
+exports.getBoolValue = getBoolValue;
+exports.createList = createList;
+exports.isList = isList;
+exports.getListValue = getListValue;
+
 
 SLang.env = exports;
 
