@@ -89,6 +89,17 @@ This allows you to see how each algorithm compares to other
 algorithms for solving the same problem in terms of its
 efficiency.
 
+While the main focus of this course *_is_* data structures and algorithms,
+this course will also cover some additional topics which are not standard fare
+in a data structures course:
+
+#. An introduction to object orientation and the Unified Modeling Language (UML).
+
+#. An introduction to software design patterns.
+
+#. An introduction to software development processes.
+
+
 A Philosophy of Data Structures
 -------------------------------
 

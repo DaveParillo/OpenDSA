@@ -78,7 +78,7 @@ Makefile: Primarily for source file validation and to generate some of the
 MIT-license.txt: The license file. OpenDSA is distributed under an MIT open
 source license.
 
-Portions of this fork incorporates material from http://openhttp://opendatastructures.org/
+Portions of this fork incorporates material from http://opendatastructures.org/
 which is an excellent resource, but distributed under a Creative Commons Share-Alike license,
 there fore this fork does have slightly more restrictive licensing than the original OpenDSA.
 
