@@ -10,6 +10,19 @@
 The Unified Modeling Language
 =============================
 
+Static Diagrams
+---------------
+
+
+
+Structural Diagrams
+-------------------
+
+
+Class Diagrams
+--------------
+
+
 
 
 

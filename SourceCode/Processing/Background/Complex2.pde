@@ -39,7 +39,7 @@ public final class Complex {
     } else {
       System.out.println ("'a' and 'b' are not equal.");
     }
-    System.out.println ("'a' is " + a.toString());
-    System.out.println ("'b' is " + b.toString());
+    System.out.println ("'a' = " + a);
+    System.out.println ("'b' = " + b);
 }
 

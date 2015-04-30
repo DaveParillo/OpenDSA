@@ -55,27 +55,26 @@ There are 4 principles that apply to most:
 :Encapsulation:
     
     Encapsulation refers to the creation of self-contained modules (classes)
-    that bind processing functions to the data. 
+    that bind processing functions to its data members. 
     The data within each class is kept private.
     Each class defines rules for what is publicly visible and
     what modifications are allowed.
 
 :Inheritance:
     
-    Classes are created in hierarchies, and inheritance lets the 
+    Classes may be created in hierarchies, and inheritance lets the 
     structure and methods in one class pass down the :term:`class hierarchy`. 
-    By *inheriting* code, complex classes can be constructed 
+    By *inheriting* code, complex behaviors emerge
     through the reuse of code in a parent class.
     If a step is added at the bottom of a hierarchy, 
     only the processing and data associated with that unique step must be added. 
-    Everything else above that step is inherited. 
-    The ability to reuse existing objects is considered a major advantage 
-    of object technology.
+    Everything else above that step may be inherited. 
+    Reuse is considered a major advantage of object orientation.
 
 
 :Polymorphism:
     
-    Object-oriented programming lets programmers create procedures for 
+    Object oriented programming lets programmers create procedures for 
     objects whose exact type is not known until runtime. 
     For example, a screen cursor may change its shape from an arrow to a 
     line depending on the program mode. 
@@ -155,14 +154,15 @@ When run, produces the following output:
   'test1' is an Object.
 
 Where did the *equals* method come from?
-It was *inherited* from the class *Object*.
-In Java (and some other languages as well), every class is a subclass of the class Object.
+It was **inherited** from the class **Object**.
+In Java (and some other languages as well), every class is a subclass of the class **Object**.
 In Java, every class inherits methods for 
-equals, hashCode, toString, and a few others.
+**equals**, **hashCode**, **toString**, and a few others.
 
 Why?
+
 The creators of the language assumed it would be very common to be able to determine
-if two objects were equal, or to produce a String representation of an object.
+if two objects were equal or to produce a String representation of an object.
 If these methods were not in the Object class, then every programmer would have to 
 create their own solution for this problem. 
 More importantly, every programmer might implement a different *interface* for basic
@@ -171,7 +171,7 @@ the implementation of these common functions between developers.
 
 
 More generically, inheritance promotes code reuse.
-An excellent example is the InputStream class.
+An excellent example is the **InputStream** class.
 The *InputStream* class is the base class (superclass) of 
 all input streams in the Java IO API. 
 *InputStream* subclasses include the *FileInputStream*, *BufferedInputStream* 
@@ -183,7 +183,7 @@ Java InputStream's are used for reading data, one byte at a time, for example:
 
 Which creates a new FileInputStream instance. 
 FileInputStream is a subclass of InputStream so it is safe to assign an instance of 
-FileInputStream to an InputStream variable (the InputStream variable). 
+FileInputStream to an InputStream variable.
 
 The *InputStream* class exposes common methods which all subclasses of *InputStream* inherit.
 
@@ -246,7 +246,7 @@ of object-oriented programming, after encapsulation and inheritance.
 Polymorphism is a Greek word that means "many-shaped" and polymorphism itself comes in
 two distinct forms:
 
-- :term:`Compile-time polymorphism`
+- :term:`Run-time polymorphism`
 
   Base classes may define and implement abstract, or virtual methods, 
   and derived classes can override them, which means they provide their own 
@@ -256,17 +256,22 @@ two distinct forms:
   Thus in your source code you can call a method on a base class, and cause a derived 
   class's version of the method to be executed.
 
-- :term:`Run-time polymorphism`
-
   At run time, objects of a derived class may be treated as objects of a base class 
   in places such as method parameters and collections or arrays. 
   When this occurs, the object's declared type is no longer identical to its 
   run-time type.
 
   Note that a derived class may be treated as any type in its inheritance hierarchy.
+  Also, it is perfectly valid for an overloaded method to be overridden.
 
-Compile-time Polymorphism
-+++++++++++++++++++++++++
+- :term:`Compile-time polymorphism`
+
+  Compile-time polymorphism is simply method overloading. 
+  **Overloaded** methods have the same method name but 
+  different number of arguments or different types of arguments or both.
+
+Run-time Polymorphism
++++++++++++++++++++++
 
 Consider our earlier discussion of the class *Object* when we discussed encapsulation.
 What is the result of the following code?
@@ -300,7 +305,7 @@ What output does this program produce?
 
 .. codeinclude:: Background/Complex2
 
-The class :term:`overrides <compile-time polymorphism>` the definitions of ``equals()`` and ``toString()`` 
+The class :term:`overrides <run-time polymorphism>` the definitions of ``equals()`` and ``toString()`` 
 providing a more generally useful implementation than provided by the default
 implementation in the *Object* class.
 
@@ -308,19 +313,59 @@ The output is:
 
 .. line-block::
   ``'a' equals 'b'.``
-  ``'a' is (1.0 + 0.0i)``
-  ``'b' is (1.0 + 0.0i)``
+  ``'a' = (1.0 + 0.0i)``
+  ``'b' = (1.0 + 0.0i)``
 
 
-Run-time Polymorphism
+Compile-time Polymorphism
 +++++++++++++++++++++++++
+
+In procedural languages without overloading, it was common to have many functions
+with similar names to perform essentially the same task on different data types.
+The absolute value function is a classic example.
+
+In C, the ``abs()`` function returns the absolute value of an integer.
+The only valid parameter you can pass is an ``int`` |---| any other type
+will fail to compile.  How is this problem solved in C?
+With different method names: ``labs()`` is used to return the absolute value
+of a float and ``fabs()`` returns the absolute value of a float.
+The burden is on the users of these functions |---| programmers 
+to remember which function is needed. 
+Additionally, there is no easy way to be flexible about the generic concept
+of taking the absolute value of a number.  The burden is on the programmer
+of the various ``*abs()`` functions to ensure the correct function is used
+with the appropriate type.
+
+Overloading is a powerful tool, but there are pitfalls.
+Consider the following snippet.
+What does the following program print?
+
+.. codeinclude:: Background/DataStructureGroup
+
+You might expect the program to print:
+
+.. line-block::
+   ``"List"``
+   ``"Queue"``
+   ``"Unknown group"``
+
+
+It does not. Why?
+
+Because ``group`` is overloaded and the **compiler** determines which
+function to invoke.  For all three types the compile-time type
+of the parameter passed to ``group`` is the same: ``Collection<?>``.
+The type changes at run-time, but this has no effect on overloading.
+
+Keep in mind that overriding methods is far more common in Java than
+overloading, so consider your use of overloading carefully.
 
 
 Abstraction
 ...........
 
 One of the key advantages of object oriented languages over :term:`procedural` languages is that
-objects act as proxies for the real-world |---| in other words, objects *model* the real world.
+objects act as metaphors for the real-world |---| in other words, objects *model* the real world.
 In a procedural language, tasks are executed in functions or procedures and the
 data that the functions operate on is stored elsewhere. A better way to manage the complexity
 of large programs is to keep the data in a program and the operations allowed on that data
@@ -336,7 +381,7 @@ Although it's perfectly valid to construct such a car in a procedural language, 
 functions and variables we have created only exist as a whole entity, a *car* in the mind of 
 the programmer who created it.  
 The idea that individual units within a program each have a specific role or responsibility
-is called :term"`cohesion` and is very difficult achieve in procedural programs.
+is called :term:`cohesion` and is difficult achieve in procedural programs.
 
 For very large programs, which might contain hundreds or even thousands of entities,
 lack of cohesion can introduce errors, make programs more difficult to understand and maintain,
@@ -347,13 +392,11 @@ and complicate the development of very large programs.
 
 
 
-
-
 Notes
 -----
 
-.. [#] See https://en.wikipedia.org/wiki/Object-oriented_programming#Fundamental_features_and_concepts
-.. [#] _SOLID: http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29
+.. [#] `Wikipedia OO fundamental concepts <https://en.wikipedia.org/wiki/Object-oriented_programming#Fundamental_features_and_concepts>`_
+.. [#] `SOLID <http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29>`_ Object oriented design
 
 
 

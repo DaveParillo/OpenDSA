@@ -267,12 +267,6 @@
         }
       }
     },
-    "Design 1": {
-      "Design/DesignADT": {
-        "long_name": "Abstaract Data Types",
-        "exercises": {}
-      }
-    },
     "Linear Structures": {
       "List/ListIntro": {
         "long_name": "Chapter Introduction: Linear Structures",

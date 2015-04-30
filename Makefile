@@ -64,6 +64,12 @@ Tutorial: min
 cisc187: min
 	python $(CONFIG_SCRIPT) config/CISC-187.json
 
+intro: min
+	python $(CONFIG_SCRIPT) config/parts/intro.json
+
+background: min
+	python $(CONFIG_SCRIPT) config/parts/background.json
+
 slides: min
 	python $(CONFIG_SCRIPT) --slides config/CISC-187.json
 
