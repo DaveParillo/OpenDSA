@@ -4,3 +4,6 @@
 [submodule "OpenPOP"]
 	path = OpenPOP
 	url = https://github.com/OpenDSA/OpenPOP.git
+[submodule "JSAV"]
+	path = JSAV
+	url = https://github.com/vkaravir/JSAV
