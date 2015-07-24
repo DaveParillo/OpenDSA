@@ -54,17 +54,6 @@
         "long_name": "The Unified Modeling Language",
         "exercises": {}
       },
-      "Design/DesignPatterns": {
-        "long_name": "Design Patterns",
-        "exercises": {
-          "PatternsIntro": {
-            "long_name": "Design Patterns Introduction Exercise",
-            "required": true,
-            "points": 1,
-            "threshold": 5
-          }
-        }
-      },
       "Background/Process": {
         "exercises": {}
       },

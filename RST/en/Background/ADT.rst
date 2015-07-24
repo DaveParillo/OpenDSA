@@ -272,6 +272,13 @@ context of a higher-level task.
 
 The ADT defines the logical form of the data type.
 The data structure implements the physical form of the data type.
+Users of an ADT are typically programmers working in the same language
+as the implementer of the ADT.
+Typically, these programmers want to use the ADT as a component
+in another application.
+The interface to an ADT is also commonly referred to as the 
+Application Programmer Interface, or API, for the ADT.
+The interface becomes a form of communication between the two programmers.
 
 .. topic:: Example
 

@@ -87,7 +87,7 @@ There are 4 principles that apply to most:
     
     An abstraction denotes the essential characteristics of an object that distinguish it from all
     other kinds of object and thus provide crisply defined conceptual
-    boundaries, relative to the perspective of the viewer. [Booch91]_
+    boundaries, relative to the perspective of the viewer. [Booch]_
 
     Abstraction denotes a model, a view, or some other focused representation 
     for an actual item. Its the development of a software object to represent 

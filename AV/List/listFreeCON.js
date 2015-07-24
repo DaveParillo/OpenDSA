@@ -81,8 +81,8 @@
   pfreelist.target(freelist.get(0));
   jsav.step();
 
-  jsav.umsg("Now let's insert a node with value 6 to the current position. This time the head node of the freelist is reused.");
-  l.add(1, '6');
+  jsav.umsg("Now let's insert a node with value 3 to the current position. This time the head node of the freelist is reused.");
+  l.add(1, '3');
   l.layout();
   freelist.remove(0);
   freelist.layout();

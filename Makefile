@@ -70,8 +70,21 @@ intro: min
 background: min
 	python $(CONFIG_SCRIPT) config/parts/background.json
 
+linear: min
+	python $(CONFIG_SCRIPT) config/parts/linear.json
+
+binary: min
+	python $(CONFIG_SCRIPT) config/parts/binary.json
+
+sort: min
+	python $(CONFIG_SCRIPT) config/parts/sort.json
+
+hash: min
+	python $(CONFIG_SCRIPT) config/parts/hash.json
+
 slides: min
-	python $(CONFIG_SCRIPT) --slides config/CISC-187.json
+	python $(CONFIG_SCRIPT) --slides config/slides.json
+#	python $(CONFIG_SCRIPT) --slides config/CISC-187.json
 
 localhost: min
 	python $(CONFIG_SCRIPT) config/localhost.json
