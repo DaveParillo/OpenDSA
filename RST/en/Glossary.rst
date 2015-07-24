@@ -52,6 +52,9 @@ Glossary
       Two :term:`nodes <node>` of a :term:`tree` or two
       :term:`vertices <vertex>` of a :term:`graph` are said to be
       adjacent if they have an :term:`edge` connecting them.
+      If the edge is directed from :math:`a` to :math:`b`,
+      then we say that :math:`a` is adjacent to :math:`b`,
+      and :math:`b` is adjacent from :math:`a`. 
 
    adjacency list
       An implementation for a :term:`graph` that uses an (array-based)
@@ -175,6 +178,10 @@ Glossary
       We frequently use the term :term:`algorithm analysis` to mean
       the same thing.
 
+   attribute
+      In :term:`object-oriented programming <object-oriented programming paradigm>`,
+      a synonym for :term:`data member`.
+
    average case
       In algorithm analysis, the average of the costs for all problem
       instances of a given input size :math:`n`. If not all problem
@@ -271,8 +278,8 @@ Glossary
       data structure, and finding a specified data item.
 
    best case
-      In algorithm analysis, the problem instance from among all
-      problem instances for a given input size :math:`n` that has
+      In algorithm analysis, the :term:`problem instance` from among
+      all problem instances for a given input size :math:`n` that has
       least cost. Note that the best case is **not** when :math:`n` is
       small, since we are referring to the best from a class of inputs
       (i.e, those inputs of size :math:`n`).
@@ -542,7 +549,9 @@ Glossary
 
    class
       In the :term:`object-oriented programming paradigm`
-      an ADT and its implementation together make up a class. 
+      an ADT and its implementation together make up a class.
+      An instantiation of a class within a program is termed an
+      :term:`object`.
 
    class hierarchy
       In :term:`object-oriented programming <object-oriented programming paradigm>`,
@@ -785,12 +794,18 @@ Glossary
    DAG
       Abbreviation for :term:`directed acyclic graph`.
 
+   data field
+      In :term:`object-oriented programming <object-oriented programming paradigm>`,
+      a synonym for :term:`data member`.
+
    data item
       A piece of information or a record whose value is drawn from a type.
 
    data member
       The variables that together define the space required by a data
       item are referred to as data members.
+      Some of the commonly used synonyms include :term:`data field`,
+      :term:`attribute`, and :term:`instance variable`.
 
    data structure
       The implementation for an :term:`ADT`.
@@ -925,6 +940,11 @@ Glossary
       Abbreviated as :term:`DAG`.
       Note that a DAG is not necessarily a :term:`tree` since a given
       :term:`node` might have multiple :term:`parents <parent>`.
+
+   directed edge
+      An :term:`edge` that goes from :term:`vertex` to another.
+      In contrast, an :term:`undirected edge` simply links to vertices
+      without a direction.
 
    directed graph
       :to-term: directed acyclic graph :label: types
@@ -1402,7 +1422,7 @@ Glossary
       :term:`free store`.
 
    free tree
-      A connected, undirected graph with no simple cycles.
+      A connected, :term:`undirected graph` with no simple cycles.
       An equivalent definition is that a free tree is connected and
       has :math:`|\mathbf{V}| - 1` edges.
 
@@ -1682,7 +1702,10 @@ Glossary
       :term:`object space decomposition`.
 
    incident
-      In :term:`graph` terminology, a synonym for :term:`adjacent`.
+      In :term:`graph` terminology,
+      an edge connecting two vertices is said to be incident with
+      those vertices.
+      The two vertices are said to be :term:`adjacent`.
 
    index file
       A file whose records consist of
@@ -1743,10 +1766,9 @@ Glossary
       This best-case cost makes it useful when we have reason to
       expect the input to be nearly sorted.
 
-   instance
-      A specific selection of values for the parameters to a problem.
-      In other words, a specific set of inputs to a problem.
-
+   instance variable
+      In :term:`object-oriented programming <object-oriented programming paradigm>`,
+      a synonym for :term:`data member`.
 
    internal fragmentation
       A condition that occurs when more than :math:`m` bytes
@@ -2289,7 +2311,7 @@ Glossary
       conjunction with a :term:`multi-dimensional search structure`.
       Most typically, a :term:`spatial` search key representing a
       position in multi-dimensional (2 or 3 dimensions) space.
-      But a multidimensional key could be used to organize data within
+      But a multi-dimensional key could be used to organize data within
       non-spatial dimensions, such as temperature and time.
 
    multi-dimensional search structure
@@ -2367,8 +2389,9 @@ Glossary
       takes up storage during the execution of a computer program.
       In the :term:`object-oriented programming paradigm`, objects
       are the basic units of operation.
-      Not only do they have state (variables), but they
-      know how to perform certain actions (:term:`methods <method>`).
+      Objects have state in the form of :term:`data members <data member>`,
+      and they know how to perform certain actions
+      (:term:`methods <method>`).
 
    object-oriented programming paradigm
       An approach to problem-solving where all computations are
@@ -2560,6 +2583,16 @@ Glossary
       Typically, each surface (top and bottom) of each platter stores
       data, and each surface has its own :term:`I/O head`.
 
+   point quadtree
+      A `term:`spatial data structure` for storing point data.
+      It is similar to a :term:`PR quadtree` in that it (in two
+      dimensions) splits the world into four parts.
+      However, it splits using an :term:`object space decomposition`.
+      That is, quadrant containing the point is split into four parts
+      at the point.
+      It is similar to the :term:`kd tree` which splits alternately in
+      each dimension, except that it splits in all dimensions at once.
+
    pop
       A specialized term used to indicate removing an :term:`element`
       from a :term:`stack`. 
@@ -2704,6 +2737,10 @@ Glossary
       It is best thought of as a :term:`function` or a mapping of
       inputs to outputs.
 
+   problem instance
+      A specific selection of values for the parameters to a problem.
+      In other words, a specific set of inputs to a problem.
+
    procedural
       Typically referring to the
       :term:`procedural programming paradigm`, in contrast to the
@@ -2825,7 +2862,7 @@ Glossary
       file.
 
    random access memory
-      Abbreviated ;term:`RAM`, this is the principle example of
+      Abbreviated :term:`RAM`, this is the principle example of
       :term:`primary storage` in a modern computer.
       Data access times are typically measured in billionths of a
       second (microseconds), which is roughly a million times faster
@@ -3647,7 +3684,13 @@ Glossary
       done to correct this.
 
    undirected graph
-      A graph whose edges do not have a direction.
+      A :term:`graph` whose :term:`edges <edge>` do not have a direction.
+
+   undirected edge
+      An :term:`edge` that connects two :term:`vertices <vertex>` with
+      no direction between them.
+      Many graph representations will represent such an edge
+      with two :term:`directed edges <directed edge>`.
 
    UNION
       One half of the :term:`UNION/FIND` algorithm for managing
@@ -3791,8 +3834,8 @@ Glossary
       that can hold some subset of the total data being processed.
 
    worst case
-      In algorithm analysis, the problem instance from among all
-      problem instances for a given input size :math:`n` that has
+      In algorithm analysis, the :term:`problem instance` from among
+      all problem instances for a given input size :math:`n` that has
       the greatest cost. Note that the worst case is **not** when
       :math:`n` is big, since we are referring to the wost from a
       class of inputs (i.e, those inputs of size :math:`n`).

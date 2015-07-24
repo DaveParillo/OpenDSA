@@ -1,16 +1,15 @@
 {
-  "title": "CS2114 Spring 2015",
+  "title": "CS2114 Summer I, 2015",
   "build_dir": "Books",
   "code_dir": "SourceCode/",
   "lang": "en",
   "code_lang": {
-    "Processing": ["pde"],
-    "Java": ["java"]
+    "Java": { "ext":["java"], "label":"Java", "lang":"java"}
   },
   "module_origin": "http://algoviz.org",
-  "exercise_server": "https://opendsa.cc.vt.edu/",
-  "logging_server": "https://opendsa.cc.vt.edu/",
-  "score_server": "https://opendsa.cc.vt.edu/",
+  "exercise_server": "https://opendsa.cs.vt.edu/",
+  "logging_server": "https://opendsa.cs.vt.edu/",
+  "score_server": "https://opendsa.cs.vt.edu/",
   "build_JSAV": false,
   "build_cmap": false,
   "allow_anonymous_credit": true,
@@ -764,10 +763,6 @@
             "threshold": 5
           }
         }
-      },
-      "Design/Dictionary": {
-        "long_name": "The Dictionary ADT",
-        "exercises": {}
       }
     },
     "Binary Trees": {
@@ -807,7 +802,7 @@
             "points": 0.0,
             "threshold": 1.0
           },
-          "BTLeafPROG": {
+          "btLeafPROG": {
             "long_name": "Node Count Programming Exercise",
             "required": true,
             "points": 1.0,
@@ -830,17 +825,6 @@
             "required": true,
             "points": 1.0,
             "threshold": 0.90
-          }
-        }
-      },
-      "Binary/BinaryTreeImpl": {
-        "long_name": "Full Binary Tree Node Implementations",
-        "exercises": {
-          "expressionTraversalCON": {
-            "long_name": "Expression Tree Traversal Slideshow",
-            "required": false,
-            "points": 0.0,
-            "threshold": 1.0
           }
         }
       },
@@ -893,10 +877,6 @@
             "threshold": 0.90
           }
         }
-      },
-      "Binary/BSTDict": {
-        "long_name": "Dictionary Implementation with BST",
-        "exercises": {}
       }
     },
     "Sorting": {

@@ -1,4 +1,3 @@
-/*global ODSA */
 "use strict";
 // Huffman coding tree shared functions
 // Written by Maoyuan Sun, Rich Episcopo, and Cliff Shaffer
@@ -84,7 +83,7 @@ $(document).ready(function () {
   var layAll = function (trees) {
     var leftSoFar = 30;
     for (var i = 0; i < trees.length; i++) {
-      trees[i].css({"left": leftSoFar, "top": "-40px"});
+      trees[i].css({"left": leftSoFar});
       traverse_color(trees[i].root());
       trees[i].layout();
       leftSoFar += trees[i].element.width() + 50;
@@ -268,10 +267,10 @@ $(document).ready(function () {
     var temp;
     // Looking for (only) a leaf node that matches
     if (!node.left() && !node.right()) { // Got a leaf node
-      if (rawval[rawval.length-1] === anValue) {
+      if (rawval[rawval.length - 1] === anValue) {
         return node; // Match
       } else {
-	return null; // Wrong leaf node
+        return null; // Wrong leaf node
       }
     }
     temp = findNode(node.left(), anValue);
