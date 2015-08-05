@@ -92,10 +92,6 @@ sort: min
 hash: min
 	python $(CONFIG_SCRIPT) config/parts/hash.json
 
-slides: min
-	python $(CONFIG_SCRIPT) --slides config/slides.json
-#	python $(CONFIG_SCRIPT) --slides config/CISC-187.json
-
 localhost: min
 	python $(CONFIG_SCRIPT) config/localhost.json
 

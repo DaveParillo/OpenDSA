@@ -19,8 +19,12 @@
   },
   "chapters": {
     "Preface": {
+      "About": {
+        "long_name": "About this course",
+        "exercises": {}
+      },
       "Intro": {
-        "long_name": "How to Use this System",
+        "long_name": "How to use this book",
         "exercises": {}
       },
       "Status": {
@@ -28,7 +32,7 @@
         "exercises": {}
       }
     },
-    "Introduction": {
+   "Introduction": {
       "Background/IntroDSA.rst": {
         "long_name": "Introduction to Data Structures and Algorithms",
         "exercises": {
@@ -39,6 +43,31 @@
             "threshold": 5
           }
         }
+      },
+      "Background/ADT": {
+        "long_name": "Abstract Data Types",
+        "exercises": {
+          "IntroADT": {
+            "long_name": "Introduction to ADT's",
+            "required": true,
+            "points": 1.0,
+            "threshold": 5
+          }
+        }
+      },
+      "Background/OO": {
+        "long_name": "Introduction to Object Orientation",
+        "exercises": {}
+      },
+      "Background/UML": {
+        "long_name": "The Unified Modeling Language",
+        "exercises": {}
+      },
+      "Background/Process": {
+        "exercises": {}
+      },
+      "Biography/FrancisBacon": {
+        "exercises": {}
       }
     },
     "Mathematical Background": {
@@ -227,14 +256,6 @@
             "points": 1.0,
             "threshold": 5
           }
-        }
-      }
-    },
-    "Design 1": {
-      "Design/ADT": {
-        "long_name": "Abstract Data Types",
-        "exercises": {
-          "ADTCON": {}
         }
       }
     },

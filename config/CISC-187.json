@@ -3,10 +3,11 @@
   "build_dir": "Books",
   "code_dir": "SourceCode/",
   "code_lang": {
-    "Java": ["java"],
-    "Processing": ["pde"]
+    "Java": { "ext":["java"], "label":"Java", "lang":"java"},
+    "Java_Generic": { "ext":["java"], "label":"Java (Generic)","lang":"java"},
+    "Processing": { "ext":["pde"], "label":"Processing","lang":"java"},
+    "C++":{ "ext": ["cpp", "h"],"label":"C++","lang":"C++"}
   },
-  "tabbed_codeinc": false,
   "lang": "en",
   "module_origin": "http://localhost:8000",
   "exercise_server": "http://localhost:8000",
@@ -45,7 +46,9 @@
         "exercises": {
           "ADTCON": {}
         }
-      },
+      }
+   },
+   "Object Orientation": {
       "Background/OO": {
         "long_name": "Introduction to Object Orientation",
         "exercises": {}
@@ -62,9 +65,11 @@
       }
     },
 
-    "Mathematical Background": {
+
+
+    "Mathematics Background": {
       "Background/MathpreIntro": {
-        "long_name": "Chapter Introduction",
+        "long_name": "Chapter Introduction: Mathematics Background",
         "exercises": {}
       },
       "Background/SetDef": {
@@ -134,17 +139,11 @@
       }
     },
 
+
+
     "Algorithm Analysis": {
-      "AlgAnal/AnalChap": {
-        "long_name": "Chapter Intro: Algorithm Analysis",
-        "exercises": {}
-      },
-      "AlgAnal/AnalPrelim": {
-        "long_name": "Problems, Algorithms, and Programs",
-        "exercises": {}
-      },
       "AlgAnal/AnalIntro": {
-        "long_name": "Comparing Algorithms",
+        "long_name": "Chapter Introduction: Comparing Algorithms",
         "exercises": {}
       },
       "AlgAnal/AnalCases": {
@@ -256,9 +255,12 @@
         }
       }
     },
-    "Linear Structures": {
+
+
+
+    "The List Interface and Array-based Lists": {
       "List/ListIntro": {
-        "long_name": "Chapter Introduction: Linear Structures",
+        "long_name": "Chapter Introduction: Lists",
         "exercises": {}
       },
       "List/ListADT": {
@@ -337,6 +339,66 @@
           }
         }
       },
+      "Design/DesignAltList": {
+        "long_name": "Alternate List ADT Design",
+        "exercises": {}
+      },
+      "Design/Comparison": {
+        "long_name": "Comparing Records",
+        "exercises": {
+          "CompareSumm": {
+            "long_name": "Record Comparison Summary Exercise",
+            "required": true,
+            "points": 1,
+            "threshold": 5
+          }
+        }
+      }
+    },
+    "List/StackArray": {
+      "long_name": "Array-based Stacks",
+        "exercises": {
+          "astackVarCON": {
+          "long_name": "Array stack variables slideshow",
+          "required": true,
+          "points": 0.0,
+          "threshold": 1.0
+        },
+        "astackTopCON": {
+          "long_name": "Array stack top position slideshow",
+          "required": true,
+          "points": 0.0,
+        "threshold": 1.0
+        },
+        "astackPushCON": {
+          "long_name": "Array stack push slideshow",
+          "required": true,
+          "points": 0.0,
+          "threshold": 1.0
+        },
+        "astackPopCON": {
+          "long_name": "Array stack pop slideshow",
+          "required": true,
+          "points": 0.0,
+          "threshold": 1.0
+        },
+        "astackPushPRO": {
+          "long_name": "Array-based Stack Push Exercise",
+          "required": true,
+          "points": 1,
+          "threshold": 5
+        },
+        "astackPopPRO": {
+          "long_name": "Array-based Stack Pop Exercise",
+          "required": true,
+          "points": 1,
+          "threshold": 5
+        }
+      }
+    },
+
+
+    "Linked Lists": {
       "List/ListLinked": {
         "long_name": "Linked Lists",
         "exercises": {
@@ -480,48 +542,11 @@
             "threshold": 3
           }
         }
-      },
-      "List/StackArray": {
-        "long_name": "Array-based Stacks",
-          "exercises": {
-          "astackVarCON": {
-            "long_name": "Array stack variables slideshow",
-            "required": true,
-            "points": 0.0,
-            "threshold": 1.0
-          },
-          "astackTopCON": {
-            "long_name": "Array stack top position slideshow",
-            "required": true,
-            "points": 0.0,
-            "threshold": 1.0
-          },
-          "astackPushCON": {
-            "long_name": "Array stack push slideshow",
-            "required": true,
-            "points": 0.0,
-            "threshold": 1.0
-          },
-          "astackPopCON": {
-            "long_name": "Array stack pop slideshow",
-            "required": true,
-            "points": 0.0,
-            "threshold": 1.0
-          },
-          "astackPushPRO": {
-            "long_name": "Array-based Stack Push Exercise",
-            "required": true,
-            "points": 1,
-            "threshold": 5
-          },
-          "astackPopPRO": {
-            "long_name": "Array-based Stack Pop Exercise",
-            "required": true,
-            "points": 1,
-            "threshold": 5
-          }
-        }
-      },
+      }
+    },
+
+
+    "Linked Stacks and Queues": {
       "List/StackLinked": {
         "long_name": "Linked Stacks",
         "exercises": {
@@ -673,22 +698,7 @@
         }
       }
     },
-    "Design 2": {
-      "Design/DesignAltList": {
-        "long_name": "Alternate List ADT Design",
-        "exercises": {}
-      },
-      "Design/Comparison": {
-        "long_name": "Comparing Records",
-        "exercises": {
-          "CompareSumm": {
-            "long_name": "Record Comparison Summary Exercise",
-            "required": true,
-            "points": 1,
-            "threshold": 5
-          }
-        }
-      },
+    "Maps": {
       "Design/Dictionary": {
         "long_name": "The Dictionary ADT",
         "exercises": {}
@@ -705,9 +715,12 @@
         }
       }
     },
+
+
+
     "Binary Trees": {
       "Binary/BinaryTreeIntro": {
-        "long_name": "Binary Trees Chapter Introduction",
+        "long_name": "Chapter Introduction: Binary Trees",
         "exercises": {}
       },
       "Binary/BinaryTree": {
@@ -999,6 +1012,9 @@
         "exercises": {}
       }
     },
+
+
+
     "Sorting": {
       "Sorting/InSort": {
         "long_name": "Chapter Introduction: Sorting",
@@ -1596,9 +1612,12 @@
         }
       }
     },
+
+
+
     "File Processing": {
       "Development/FileProc": {
-        "long_name": "File Processing Chapter Introduction",
+        "long_name": "Chapter Introduction: File Processing",
         "exercises": {}
       },
       "Development/Secondary": {
@@ -1702,9 +1721,12 @@
         }
       }
     },
+
+
+
     "Hashing": {
       "Hashing/HashIntro": {
-        "long_name": "Introduction",
+        "long_name": "Chapter Introduction: Hashing",
         "dispModComp": true,
         "exercises": {
           "hashIntroCON1": {
@@ -1967,6 +1989,9 @@
         }
       }
     },
+
+
+
     "Memory Management": {
       "Development/MemmanIntro": {
         "long_name": "Chapter Introduction: Memory Management",
@@ -2059,9 +2084,12 @@
         "exercises": {}
       }
     },
+
+
+
     "Indexing": {
       "Development/IndexIntro": {
-        "long_name": "Indexing Chapter Introduction",
+        "long_name": "Chapter Introduction: Indexing",
         "exercises": {}
       },
       "Development/LinearIndexing.rst": {
@@ -2143,9 +2171,12 @@
         "exercises": {}
       }
     },
+
+
+
     "General Trees": {
       "General/GenTreeIntro": {
-        "long_name": "General Trees",
+        "long_name": "Chapter Introduction: General Trees",
         "exercises": {
           "GenTreePreTravCON": {
             "long_name": "General Tree Preorder Traversal Slideshow",
@@ -2183,6 +2214,14 @@
             "threshold": 0.90
           }
         }
+      },
+      "Development/GenTreeImplement": {
+        "long_name": "General Tree Implementations",
+        "exercises": {}
+      },
+      "Development/Kary": {
+        "long_name": "K-ary Trees",
+        "exercises": {}
       },
       "General/SequentialRep": {
         "long_name": "Sequential Tree Representations",
@@ -2238,9 +2277,42 @@
         }
       }
     },
+
+
+
+    "Spatial Data Structures": {
+      "Development/Spatial": {
+        "long_name": "Chapter Introduction: Spatial Data Structures",
+        "exercises": {}
+      },
+      "Development/KDtree": {
+        "long_name": "k-d Trees",
+        "exercises": {}
+      },
+      "Development/Bintree": {
+        "long_name": "Bintrees",
+        "exercises": {}
+      },
+      "Development/BintreeNew": {
+        "long_name": "Bintrees",
+        "exercises": {
+          "bintreeCONBTEX": {},
+          "bintreeAV": {
+            "long_name": "Bintree Visualization",
+            "required": false,
+            "points": 0,
+            "showhide": "none",
+            "threshold": 1.0
+          }
+        }
+      }
+    },
+
+
+
     "Graphs": {
       "Development/GraphIntro": {
-        "long_name": "Introduction and Terminology",
+        "long_name": "Chapter Introduction: Graphs",
         "exercises": {}
       },
       "Development/GraphImpl": {
