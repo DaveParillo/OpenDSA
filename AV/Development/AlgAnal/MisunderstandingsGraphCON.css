@@ -1,10 +1,8 @@
-#SummationTwoPowerICON {
-  width: 850px;
+#MisunderstandingsGraphCON {
   height: 600px;
 }
-#SummationTwoPowerICON .jsavoutput.jsavline {
-  width:800px;
-  height:120px;
+#MisunderstandingsGraphCON .jsavline{
+  height: 100px;
 }
 .rotated {
   -webkit-transform: rotate(90deg);
@@ -13,6 +11,6 @@
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-h1{
-  font-size: 1em;
+.dashed{
+  stroke-dasharray: 5, 5;
 }
